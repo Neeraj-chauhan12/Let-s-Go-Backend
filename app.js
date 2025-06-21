@@ -5,6 +5,7 @@ const path= require('path')
 const cors = require('cors')
 const userrouter= require('./routes/userRoute')
 const captainrouter=require('./routes/captainRoute')
+const mapsrouter=require('./routes/maproutes')
 
 
 
@@ -21,6 +22,7 @@ app.use(cors())
 //routers
 app.use('/user',userrouter);
 app.use('/captain',captainrouter)
+app.use('/map',mapsrouter);
 
 
 //data base connection

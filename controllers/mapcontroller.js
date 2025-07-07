@@ -29,3 +29,18 @@ module.exports.getDistanceTime=async(req,res)=>{
 
 
 }
+
+
+module.exports.getAutoSuggestions=async(req,res)=>{
+    try {
+        const {input}=req.query;
+        const suggestions=await mapService.getAutoSuggestions(input)
+        res.status(200).json(suggestions)
+        
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({message: 'Internal server error'})
+        
+        
+    }
+}

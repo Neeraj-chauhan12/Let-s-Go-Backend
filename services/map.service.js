@@ -1,6 +1,6 @@
 const axios =require('axios')
 
-module.exports.getAddressCoordinate = async (address)=>{
+module.exports.getAddressCoordinate=async(address)=>{
     const apiKey=process.env.MAP_API;
     const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${apiKey}`;
     try {

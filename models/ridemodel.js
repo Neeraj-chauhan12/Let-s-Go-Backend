@@ -3,8 +3,9 @@ const mongooose= require('mongoose')
 const rideSchema=new mongooose.Schema({
     
     user:{
-        type:mongooose.Schema.Types.ObjectId,
-        ref:'user',
+        type: mongooose.Schema.Types.ObjectId,
+        ref: 'user',
+        //required:true
         
     },
     captain:{
@@ -48,7 +49,7 @@ const rideSchema=new mongooose.Schema({
     },
     otp:{
         type:String,
-       // required:true,
+        required:true,
         select:false
 
     }

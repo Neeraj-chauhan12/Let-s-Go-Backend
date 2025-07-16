@@ -4,8 +4,19 @@ const bcrypt = require('bcrypt');
 const crypto = require('crypto');
 
 
+function getOtp(num){
+
+    function generateotp(num){
+    const otp= crypto.randomInt(Math.pow(10,num-1),Math.pow(10,num)).toString();
+     return otp;
+    }
+   
+    return generateotp(num)
+
+}
+
 module.exports.createRide = async ({
-     pickup, destination, vichle
+ pickup, destination, vichle
 }) => {
     if ( !pickup || !destination || !vichle) {
         throw new Error('All fields are required');
@@ -13,8 +24,10 @@ module.exports.createRide = async ({
 
     const fare = await getFare(pickup, destination);
     const ride = rideModel.create({
+        
         pickup,
         destination,
+        otp:getOtp(4),
         fare: fare[vichle ]
     })
 

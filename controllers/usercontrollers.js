@@ -10,7 +10,7 @@ exports.signupcontrollers= async(req,res)=>{
     try {
         const userExit=await User.findOne({email});
         if(userExit){
-            return res.status(400).json({error:"user already exist"})
+            return res.status(400).json({error:"user already exist"});
         }
 
 

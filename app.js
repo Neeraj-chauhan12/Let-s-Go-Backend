@@ -22,7 +22,7 @@ app.use(cors())
 
 //routers
 app.use('/user',userrouter);
-app.use('/captain',captainrouter)
+app.use('/captain',captainrouter);
 app.use('/map',mapsrouter);
 app.use('/ride',riderouter)
 
@@ -32,5 +32,5 @@ const PORT=process.env.PORT
 connectdb()
 
 app.listen(PORT,()=>{
-    console.log(`app is running ${PORT}`)
+    console.log(`app is running ${PORT}`);
 })
